@@ -16,5 +16,6 @@ services:
     restart: always
     volumes:
       - /data/mongodb/db:/data/db
+      - ./csv:/home
     ports:
       - "27018:27017"
