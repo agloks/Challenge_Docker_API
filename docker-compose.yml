@@ -6,6 +6,8 @@ services:
     restart: always
     ports:
       - "9000:9000"
+    volumes:
+      - ./logs:/opt/app/logs
     links:
       - db
     depends_on:

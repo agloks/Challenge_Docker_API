@@ -1,0 +1,47 @@
+
+  ------------------------------------------------------------------------------------------------
+        12/5/2019, 3:24:09 PM
+
+      
+    SERVER STARTED - PORT 9000
+    
+      3:24:12 PM POST ROUTE
+      
+      3:24:16 PM POST ROUTE
+      
+      3:24:20 PM POST ROUTE
+      
+  ------------------------------------------------------------------------------------------------
+        12/5/2019, 8:13:38 PM
+
+      
+    SERVER STARTED - PORT 9000
+    
+      8:15:29 PM PATCH ROUTE
+      
+      8:16:06 PM PUT ROUTE
+      
+      8:16:46 PM PUT ROUTE
+      
+      8:16:51 PM PUT ROUTE
+      
+      8:17:59 PM PUT ROUTE
+      
+      8:18:06 PM PUT ROUTE
+      
+      8:18:18 PM PUT ROUTE
+      
+      8:18:37 PM DELETE ROUTE
+      
+      8:18:43 PM DELETE ROUTE
+      
+      8:18:53 PM DELETE ROUTE
+      
+      8:18:56 PM DELETE ROUTE
+      
+      8:18:58 PM DELETE ROUTE
+      
+      8:18:59 PM DELETE ROUTE
+      
+      8:20:16 PM POST ROUTE
+      
