@@ -16,14 +16,28 @@
  
 # Download and transfer project files
 
-### 1) Clone the repository, install node packages, up docker and verify routes locally
+### If you have mongodb, so clone the repository, install node packages, execute script, up docker and verify routes locally
 
 ``` 
 //on local
 git clone https://github.com/agloks/node-dck.git
 cd node-dck
 npm install
+chmod +x mongo_local.sh
+./mongo_local.sh
 docker-compose up --build
+```
+
+### if you not have mongodb, so clone the repository, install node packages, up docker, execute script and verify routes locally
+
+``` 
+//on local
+git clone https://github.com/agloks/node-dck.git
+cd node-dck
+npm install
+chmod +x mongo_docker.sh
+docker-compose up --build &
+./mongo_docker.sh
 ```
 
 ## Create Methods
@@ -35,11 +49,11 @@ Create `Produto` calling route POST: http://localhost:9000/api/V1/product/create
  Key| Description| Required
  ---|---|---
  `name`       | product name.             | **Yes**
- `sku`      | product code sku.                            | **Yes**
- `price`  | price product.                         | No, <br> Default setting: `true`.
- `quantity` | number of product.
- `categories`  | name of category on db                        | No, <br> Default setting: `true`.
- `description`  | description product                         | No, <br> Default setting: `true`.
+ `sku`      | product code sku.                            | **Yes** , <br> Unique: `true`.
+ `price`  | price product.                         | No, <br> Default setting: `0`.
+ `quantity` | number of product.					| No, <br> Default setting: `0`.
+ `categories`  | name of category on db                        | No
+ `description`  | description product                         | No, <br> Default setting: `Empty`.
 
 ### Exames
 
@@ -48,7 +62,7 @@ Create `Categorias` using calling route POST: http://localhost:9000/api/V1/categ
  Key| Description| Required
  ---|---|---
  `name`       | name of category.             | **Yes**
- `code`      | code of category.                            | **Yes**
+ `code`      | code of category.                            | **Yes** <br> Unique: `true`.
 
 
 ## Remove Methods
@@ -62,7 +76,7 @@ Remove any value in `Produto` calling route PATCH: http://localhost:9000/api/V1/
  `name`       | write as value = "remove"             | No
  `sku`      | code of sku don't is able to remove                            | **Yes**
  `price`  | write as value = "remove"                         | No
- `quantity` | write as value = "remove"
+ `quantity` | write as value = "remove"							| No
  `categories`  | write as value = "remove"                       | No
  `description`  | write as value = "remove"                         | No
 
@@ -87,7 +101,7 @@ Update any value in `Produto` calling route PUT: http://localhost:9000/api/V1/pr
  `name`       | product name.             | No
  `sku`      | code of sku don't is able to remove                            | **Yes**
  `price`  | price product.                         | No
- `quantity` | number of product.
+ `quantity` | number of product.					| No
  `categories`  | here is to add more categories to product                        | No
  `description`  | description product                         | No
 
@@ -124,4 +138,9 @@ Delete `Categorias` calling route DELETE: http://localhost:9000/api/V1/categorie
 
 ## Tests
 
-They were fully realized in Postman's automated environment, proving the success of each functionality. The tests that were done in this case can be seen in the figure below, just in the left tab. Postman is an extremely useful tool for manually testing or automating testing of any REST API.
+They were fully realized with shell script because don't need download anything, automating the call in api, and proving success of each route. 
+To execute test so need give permission for script and execute.
+``` 
+chmod +x test-routes.sh
+./test-routes.sh
+`
