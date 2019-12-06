@@ -142,5 +142,5 @@ They were fully realized with shell script because don't need download anything,
 To execute test so need give permission for script and execute.
 ``` 
 chmod +x test-routes.sh
-./test-routes.sh
+./test-routes.sh <payload>
 `
