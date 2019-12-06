@@ -144,6 +144,7 @@ Delete `Categorias` calling route DELETE: http://localhost:9000/api/V1/categorie
 They were fully realized with shell script because don't need download anything, automating the call in api, and proving success of each route. 
 To execute test so need give permission for script and execute.
 ``` 
-chmod +x test-routes.sh
-./test-routes.sh <payload>
+cd tests
+chmod +x test-route.sh
+./test-route.sh <payload>
 `
