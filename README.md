@@ -16,10 +16,9 @@
  
 # Download and transfer project files
 
-### If you have mongodb, so clone the repository, install node packages, execute script, up docker and verify routes locally
+### 1) If you have mongodb, so clone the repository, install node packages, execute script, up docker and verify routes locally
 
 ``` 
-//on local
 git clone https://github.com/agloks/node-dck.git
 cd node-dck
 npm install
@@ -28,15 +27,18 @@ chmod +x mongo_local.sh
 docker-compose up --build
 ```
 
-### if you not have mongodb, so clone the repository, install node packages, up docker, execute script and verify routes locally
+### 1) If you not have mongodb, so clone the repository, install node packages, up docker, execute script and verify routes locally
 
 ``` 
-//on local
 git clone https://github.com/agloks/node-dck.git
 cd node-dck
 npm install
 chmod +x mongo_docker.sh
 docker-compose up --build &
+```
+### 2) When application is up, exeute script
+
+```
 ./mongo_docker.sh
 ```
 
