@@ -1,6 +1,6 @@
 # Backend RESTFul API
 
-## technologies
+## Technologies
 
 - Node.js  
 
@@ -10,7 +10,8 @@
 
 ## Dependencies
 
-- Mongoose 
+- mongoose
+- mongoimport
 
 ## Steps
  
