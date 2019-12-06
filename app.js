@@ -1,10 +1,9 @@
 const http = require("http");
-const qs = require("querystring");
 const mongoose = require("mongoose");
 
 const ProductController = require("./lib-local/crud-product");
 const CategorieController = require("./lib-local/crud-categories")
-const GetList = require("./lib-local/get-function");
+const listFunctions = require("./lib-local/functions");
 const log = require("./lib-local/log")
 
 function error(req, res) {
@@ -36,7 +35,7 @@ const urlsDelete =
   "/api/V1/categories/delete/": CategorieController.deleteCategorie,
 }
 
-const server = http.createServer( async (req, res) => {
+const server = http.createServer( async(req, res) => {
   
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
@@ -44,22 +43,13 @@ const server = http.createServer( async (req, res) => {
   res.setHeader('Access-Control-Allow-Credentials', true);
 
   if(req.method == "POST" && urlsPost[req.url]) {
-    const date = new Date()
+    const date = new Date();
     log (
       `
-      ${date.toLocaleTimeString()} POST ROUTE
+      ${date.toLocaleTimeString()} POST ROUTE -> ${req.url}
       `,"./logs"
     )
-    const call = urlsPost[req.url];
-    let body = "";
-    req.on("data", (data) => {
-      body += data;
-      if (body.length > 1e6) req.connection.destroy();
-    })
-    req.on("end", () => {
-      body = qs.parse(body);
-      call(req, res , body);
-    })
+    listFunctions.parseBodyCallback(req, res, urlsPost[req.url]);
     return;
   }
 
@@ -67,20 +57,10 @@ const server = http.createServer( async (req, res) => {
     const date = new Date()
     log (
       `
-      ${date.toLocaleTimeString()} PUT ROUTE
+      ${date.toLocaleTimeString()} PUT ROUTE -> ${req.url}
       `,"./logs"
     )
-
-    const call = urlsPut[req.url];
-    let body = "";
-    req.on("data", (data) => {
-      body += data;
-      if (body.length > 1e6) req.connection.destroy();
-    })
-    req.on("end", () => {
-      body = qs.parse(body);
-      call(req, res , body);
-    })
+    listFunctions.parseBodyCallback(req, res, urlsPut[req.url]);
     return;
   }
 
@@ -88,20 +68,10 @@ const server = http.createServer( async (req, res) => {
     const date = new Date()
     log (
       `
-      ${date.toLocaleTimeString()} PATCH ROUTE
+      ${date.toLocaleTimeString()} PATCH ROUTE -> ${req.url}
       `,"./logs"
     )
-
-    const call = urlsPatch[req.url];
-    let body = "";
-    req.on("data", (data) => {
-      body += data;
-      if (body.length > 1e6) req.connection.destroy();
-    })
-    req.on("end", () => {
-      body = qs.parse(body);
-      call(req, res , body);
-    })
+    listFunctions.parseBodyCallback(req, res, urlsPatch[req.url]);
     return;
   }
 
@@ -109,20 +79,10 @@ const server = http.createServer( async (req, res) => {
     const date = new Date()
     log (
       `
-      ${date.toLocaleTimeString()} DELETE ROUTE
+      ${date.toLocaleTimeString()} DELETE ROUTE -> ${req.url}
       `,"./logs"
     )
-    
-    const call = urlsDelete[req.url];
-    let body = "";
-    req.on("data", (data) => {
-      body += data;
-      if (body.length > 1e6) req.connection.destroy();
-    })
-    req.on("end", () => {
-      body = qs.parse(body);
-      call(req, res , body);
-    })
+    listFunctions.parseBodyCallback(req, res, urlsDelete[req.url]);
     return;
   }
 

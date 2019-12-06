@@ -7,6 +7,8 @@ module.exports = new class ProductController {
 
   async createCategorie(req, res, body) {
     try {
+      if(!Object.keys(body).length) throw new Error("Body vazio")
+      
       const {name, code} = body;
       const sucess = await db_category.create(body);
       res.writeHead(200, { 'Content-Type': 'application/json' });
@@ -20,6 +22,8 @@ module.exports = new class ProductController {
   
   async removeCategorie(req, res, body) {
     try{
+      if(!Object.keys(body).length) throw new Error("Body vazio")
+
       let objSend = {};
       const {code} = body;
       for(let k in body) {
@@ -37,6 +41,8 @@ module.exports = new class ProductController {
   
   async updateCategorie(req, res, body) {
     try{
+      if(!Object.keys(body).length) throw new Error("Body vazio")
+
       const {code} = body;
       const sucess = await db_category.findOneAndUpdate({code: code}, body);
       res.writeHead(200, { 'Content-Type': 'application/json' });
@@ -50,6 +56,8 @@ module.exports = new class ProductController {
   
   async deleteCategorie(req, res, body) {
     try{
+      if(!Object.keys(body).length) throw new Error("Body vazio")
+
       const {code} = body;
       const sucess = await db_category.findOneAndDelete({code: code});
       res.writeHead(200, { 'Content-Type': 'application/json' });

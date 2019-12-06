@@ -1,0 +1,337 @@
+
+  ------------------------------------------------------------------------------------------------
+        12/6/2019, 6:02:05 AM
+
+      
+    SERVER STARTED - PORT 9000
+    
+      6:10:15 AM POST ROUTE
+      
+      6:15:10 AM POST ROUTE
+      
+      6:16:49 AM POST ROUTE
+      
+      6:19:57 AM POST ROUTE
+      
+      6:22:02 AM POST ROUTE
+      
+      6:22:20 AM POST ROUTE
+      
+  ------------------------------------------------------------------------------------------------
+        12/6/2019, 6:24:19 AM
+
+      
+    SERVER STARTED - PORT 9000
+    
+      6:24:48 AM POST ROUTE
+      
+      6:26:33 AM POST ROUTE
+      
+      6:27:12 AM POST ROUTE
+      
+  ------------------------------------------------------------------------------------------------
+        12/6/2019, 8:29:45 AM
+
+      
+    SERVER STARTED - PORT 9000
+    
+      8:30:25 AM POST ROUTE
+      
+      8:31:22 AM POST ROUTE
+      
+      8:38:45 AM POST ROUTE
+      
+      8:39:05 AM POST ROUTE
+      
+      8:41:09 AM DELETE ROUTE
+      
+      8:45:31 AM DELETE ROUTE
+      
+      8:45:34 AM DELETE ROUTE
+      
+      8:45:35 AM DELETE ROUTE
+      
+      8:47:59 AM POST ROUTE
+      
+      8:48:00 AM POST ROUTE
+      
+      8:48:12 AM DELETE ROUTE
+      
+      8:48:17 AM DELETE ROUTE
+      
+      8:56:47 AM POST ROUTE
+      
+      8:56:47 AM POST ROUTE
+      
+      8:57:12 AM DELETE ROUTE
+      
+      8:57:12 AM DELETE ROUTE
+      
+      9:00:01 AM POST ROUTE
+      
+      9:00:01 AM POST ROUTE
+      
+      9:00:42 AM POST ROUTE
+      
+      9:00:42 AM POST ROUTE
+      
+      9:00:53 AM PATCH ROUTE
+      
+      9:00:53 AM PATCH ROUTE
+      
+      9:01:15 AM DELETE ROUTE
+      
+      9:01:15 AM DELETE ROUTE
+      
+      9:09:58 AM POST ROUTE
+      
+      9:09:58 AM POST ROUTE
+      
+      9:10:00 AM PUT ROUTE
+      
+      9:10:00 AM PUT ROUTE
+      
+      9:10:01 AM PATCH ROUTE
+      
+      9:10:02 AM PATCH ROUTE
+      
+      9:10:03 AM DELETE ROUTE
+      
+      9:10:03 AM DELETE ROUTE
+      
+  ------------------------------------------------------------------------------------------------
+        12/6/2019, 7:26:21 AM
+
+      
+    SERVER STARTED - PORT 9000
+    
+  ------------------------------------------------------------------------------------------------
+        12/6/2019, 7:27:20 AM
+
+      
+    SERVER STARTED - PORT 9000
+    
+      7:27:30 AM POST ROUTE -> async createProduct(req, res, body) {
+    try {
+      if(!Object.keys(body).length) throw new Error("Body vazio")
+
+      const {name, sku, price, quantity, categories, description} = body;
+      /*
+      checamos se a categoria existe ou estar sendo enviado corretamente, para que possamos
+      mandar o id do mesmo para o array de id no field categories da nossa colection product 
+      */
+      const categoryCheckExist = await db_category.findOne({name: categories});
+      if(categoryCheckExist) {
+        body.categories = categoryCheckExist._id;
+        const sucess = await db_product.create(body);
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({result: sucess}));
+      }
+      else {
+        const sucess = await db_product.create(body);
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({result: sucess}));
+      }
+    } catch(e) {
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({result: "error"}));
+      console.log(`error in create product \n ${e}$`)
+    }
+  }
+      
+      7:27:30 AM POST ROUTE -> async createCategorie(req, res, body) {
+    try {
+      if(!Object.keys(body).length) throw new Error("Body vazio")
+      
+      const {name, code} = body;
+      const sucess = await db_category.create(body);
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({result: sucess}));
+    } catch(e) {
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({result: "error"}));
+      console.log(`error in create Categorie \n ${e}$`);
+    }
+  }
+      
+  ------------------------------------------------------------------------------------------------
+        12/6/2019, 7:30:20 AM
+
+      
+    SERVER STARTED - PORT 9000
+    
+      7:31:29 AM POST ROUTE -> async createProduct(req, res, body) {
+    try {
+      if(!Object.keys(body).length) throw new Error("Body vazio")
+
+      const {name, sku, price, quantity, categories, description} = body;
+      /*
+      checamos se a categoria existe ou estar sendo enviado corretamente, para que possamos
+      mandar o id do mesmo para o array de id no field categories da nossa colection product 
+      */
+      const categoryCheckExist = await db_category.findOne({name: categories});
+      if(categoryCheckExist) {
+        body.categories = categoryCheckExist._id;
+        const sucess = await db_product.create(body);
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({result: sucess}));
+      }
+      else {
+        const sucess = await db_product.create(body);
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({result: sucess}));
+      }
+    } catch(e) {
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({result: "error"}));
+      console.log(`error in create product \n ${e}$`)
+    }
+  }
+      
+      7:31:29 AM POST ROUTE -> async createCategorie(req, res, body) {
+    try {
+      if(!Object.keys(body).length) throw new Error("Body vazio")
+      
+      const {name, code} = body;
+      const sucess = await db_category.create(body);
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({result: sucess}));
+    } catch(e) {
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({result: "error"}));
+      console.log(`error in create Categorie \n ${e}$`);
+    }
+  }
+      
+      7:31:39 AM PUT ROUTE -> async updateProduct(req, res, body) {
+    try{
+      if(!Object.keys(body).length) throw new Error("Body vazio")
+
+      const {sku, categories} = body;
+      /*
+      checando novamente com o plus de remover a proprierdade do body para não sobrescrever o array,
+      então logo inserimos na mão mesmo.
+      */
+      const categoryCheckExist = await db_category.findOne({name: categories});
+      if(categoryCheckExist) {
+        delete body["categories"];
+        const sucess = await db_product.findOneAndUpdate({sku: sku}, {...body, $push: {categories: categoryCheckExist._id}});
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({result: sucess}));
+      } else {
+        const sucess = await db_product.findOneAndUpdate({sku: sku}, body);
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({result: sucess}));
+      }
+    } catch(e) {
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({result: "error"}));
+      console.log(`error in update Product \n ${e}$`);
+    }
+  }
+      
+      7:31:39 AM PUT ROUTE -> async updateCategorie(req, res, body) {
+    try{
+      if(!Object.keys(body).length) throw new Error("Body vazio")
+
+      const {code} = body;
+      const sucess = await db_category.findOneAndUpdate({code: code}, body);
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({result: sucess}));
+    } catch(e) {
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({result: "error"}));
+      console.log(`error in update Categorie \n ${e}$`);
+    }
+  }
+      
+      7:31:50 AM PATCH ROUTE -> async removeProduct(req, res, body) {
+    try{
+      if(!Object.keys(body).length) throw new Error("Body vazio")
+
+      let objSend = {};
+      const {sku} = body;
+      for(let k in body) {
+        if(body[k] === "remove") objSend[k] = ""; 
+      }
+      const sucess = await db_product.findOneAndUpdate({sku: sku}, objSend);
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({result: sucess}));
+    } catch(e) {
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({result: "error"}));
+      console.log(`error in remove Product \n ${e}$`);
+    }
+  }
+      
+      7:31:51 AM PATCH ROUTE -> async removeCategorie(req, res, body) {
+    try{
+      if(!Object.keys(body).length) throw new Error("Body vazio")
+
+      let objSend = {};
+      const {code} = body;
+      for(let k in body) {
+        if(body[k] === "remove") objSend[k] = ""; 
+      }
+      const sucess = await db_category.findOneAndUpdate({code: code}, objSend);
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({result: sucess}));
+    } catch(e) {
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({result: "error"}));
+      console.log(`error in remove Categorie \n ${e}$`);
+    }
+  }
+      
+      7:32:06 AM DELETE ROUTE -> async deleteProduct(req, res, body) {
+    try{
+      if(!Object.keys(body).length) throw new Error("Body vazio")
+
+      const {sku} = body;
+      const sucess = await db_product.findOneAndDelete({sku: sku});
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({result: sucess}));
+    } catch(e) {
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({result: "error"}));
+      console.log(`error in update Product \n ${e}$`);
+    }
+  }
+      
+      7:32:07 AM DELETE ROUTE -> async deleteCategorie(req, res, body) {
+    try{
+      if(!Object.keys(body).length) throw new Error("Body vazio")
+
+      const {code} = body;
+      const sucess = await db_category.findOneAndDelete({code: code});
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({result: sucess}));
+    } catch(e) {
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({result: "error"}));
+      console.log(`error in delete Categorie \n ${e}$`);
+    }
+  }
+      
+  ------------------------------------------------------------------------------------------------
+        12/6/2019, 9:37:22 AM
+
+      
+    SERVER STARTED - PORT 9000
+    
+      9:39:26 AM POST ROUTE -> /api/V1/product/create/
+      
+      9:39:26 AM POST ROUTE -> /api/V1/categories/create/
+      
+      9:39:42 AM PUT ROUTE -> /api/V1/product/update/
+      
+      9:39:42 AM PUT ROUTE -> /api/V1/categories/update/
+      
+      9:39:50 AM PATCH ROUTE -> /api/V1/product/remove/
+      
+      9:39:50 AM PATCH ROUTE -> /api/V1/categories/remove/
+      
+      9:39:58 AM DELETE ROUTE -> /api/V1/product/delete/
+      
+      9:39:58 AM DELETE ROUTE -> /api/V1/categories/delete/
+      

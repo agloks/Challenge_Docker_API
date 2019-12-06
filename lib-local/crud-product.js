@@ -8,6 +8,8 @@ module.exports = new class ProductController {
 
   async createProduct(req, res, body) {
     try {
+      if(!Object.keys(body).length) throw new Error("Body vazio")
+
       const {name, sku, price, quantity, categories, description} = body;
       /*
       checamos se a categoria existe ou estar sendo enviado corretamente, para que possamos
@@ -34,6 +36,8 @@ module.exports = new class ProductController {
   
   async removeProduct(req, res, body) {
     try{
+      if(!Object.keys(body).length) throw new Error("Body vazio")
+
       let objSend = {};
       const {sku} = body;
       for(let k in body) {
@@ -51,6 +55,8 @@ module.exports = new class ProductController {
   
   async updateProduct(req, res, body) {
     try{
+      if(!Object.keys(body).length) throw new Error("Body vazio")
+
       const {sku, categories} = body;
       /*
       checando novamente com o plus de remover a proprierdade do body para não sobrescrever o array,
@@ -76,6 +82,8 @@ module.exports = new class ProductController {
   
   async deleteProduct(req, res, body) {
     try{
+      if(!Object.keys(body).length) throw new Error("Body vazio")
+
       const {sku} = body;
       const sucess = await db_product.findOneAndDelete({sku: sku});
       res.writeHead(200, { 'Content-Type': 'application/json' });

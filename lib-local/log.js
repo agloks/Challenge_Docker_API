@@ -1,14 +1,10 @@
 function log(text, path = ".") {
   const time = new Date();
   const fs = require("fs");
-  const process = require("process")
+  const process = require("process");
 
   let started = false;
-  try {
-    process.chdir(path)
-  } catch(e) {
-    started = true;
-  }
+  try { process.chdir(path); } catch(e) { started = true; }
 
   const day = time.toLocaleString().split("");
   const dayFormated = day.slice(0,9).join("").replace(/\//g,"-");
