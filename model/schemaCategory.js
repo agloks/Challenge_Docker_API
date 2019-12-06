@@ -3,8 +3,8 @@ const Schema = mongoose.Schema
 
 const CategorySchema = new Schema (
   {
-    code: {type: Schema.Types.Mixed},
-    name: {type: Schema.Types.Mixed},
+    name: {type: Schema.Types.Mixed, required: true},
+    code: {type: Schema.Types.Mixed, unique: true, required: true},
   },
   {timestamps: true}
 )

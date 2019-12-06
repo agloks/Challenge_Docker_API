@@ -19,11 +19,13 @@ module.exports = new class ProductController {
       if(categoryCheckExist) {
         body.categories = categoryCheckExist._id;
         const sucess = await db_product.create(body);
+        
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({result: sucess}));
       }
       else {
         const sucess = await db_product.create(body);
+        
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({result: sucess}));
       }
@@ -43,7 +45,11 @@ module.exports = new class ProductController {
       for(let k in body) {
         if(body[k] === "remove") objSend[k] = ""; 
       }
-      const sucess = await db_product.findOneAndUpdate({sku: sku}, objSend);
+      if(sku !== body["sku"]) throw new Error("Não é possível remover sku")
+
+      const sucess = await db_product.findOneAndUpdate({sku: sku}, objSend)
+      .then((s) => db_product.findById(s._id));;
+      
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({result: sucess}));
     } catch(e) {
@@ -65,11 +71,15 @@ module.exports = new class ProductController {
       const categoryCheckExist = await db_category.findOne({name: categories});
       if(categoryCheckExist) {
         delete body["categories"];
-        const sucess = await db_product.findOneAndUpdate({sku: sku}, {...body, $push: {categories: categoryCheckExist._id}});
+        const sucess = await db_product.findOneAndUpdate({sku: sku}, {...body, $push: {categories: categoryCheckExist._id}})
+        .then((s) => db_product.findById(s._id));
+        
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({result: sucess}));
       } else {
-        const sucess = await db_product.findOneAndUpdate({sku: sku}, body);
+        const sucess = await db_product.findOneAndUpdate({sku: sku}, body)
+        .then((s) => db_product.findById(s._id));;
+        
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({result: sucess}));
       }
@@ -86,6 +96,7 @@ module.exports = new class ProductController {
 
       const {sku} = body;
       const sucess = await db_product.findOneAndDelete({sku: sku});
+      
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({result: sucess}));
     } catch(e) {

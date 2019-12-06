@@ -335,3 +335,213 @@
       
       9:39:58 AM DELETE ROUTE -> /api/V1/categories/delete/
       
+  ------------------------------------------------------------------------------------------------
+        12/6/2019, 1:07:51 PM
+
+      
+    SERVER STARTED - PORT 9000
+    
+  ------------------------------------------------------------------------------------------------
+        12/6/2019, 1:11:52 PM
+
+      
+    SERVER STARTED - PORT 9000
+    
+      1:12:45 PM POST ROUTE -> /api/V1/product/create/
+      
+      1:12:45 PM POST ROUTE -> /api/V1/categories/create/
+      
+      1:13:03 PM PUT ROUTE -> /api/V1/product/update/
+      
+      1:13:04 PM PUT ROUTE -> /api/V1/categories/update/
+      
+      1:13:15 PM PATCH ROUTE -> /api/V1/product/remove/
+      
+      1:13:15 PM PATCH ROUTE -> /api/V1/categories/remove/
+      
+      1:13:29 PM DELETE ROUTE -> /api/V1/product/delete/
+      
+      1:13:29 PM DELETE ROUTE -> /api/V1/categories/delete/
+      
+      1:16:09 PM POST ROUTE -> /api/V1/product/create/
+      
+      1:16:22 PM POST ROUTE -> /api/V1/product/create/
+      
+      1:16:31 PM POST ROUTE -> /api/V1/product/create/
+      
+      1:16:48 PM PATCH ROUTE -> /api/V1/product/remove/
+      
+      1:17:18 PM PUT ROUTE -> /api/V1/product/update/
+      
+      1:17:42 PM DELETE ROUTE -> /api/V1/product/delete/
+      
+      1:17:50 PM DELETE ROUTE -> /api/V1/product/delete/
+      
+      1:17:58 PM POST ROUTE -> /api/V1/categories/create/
+      
+      1:18:01 PM POST ROUTE -> /api/V1/categories/create/
+      
+      1:18:08 PM POST ROUTE -> /api/V1/categories/create/
+      
+      1:18:19 PM POST ROUTE -> /api/V1/categories/create/
+      
+      1:18:20 PM POST ROUTE -> /api/V1/categories/create/
+      
+      1:18:38 PM PATCH ROUTE -> /api/V1/categories/remove/
+      
+      1:18:40 PM PATCH ROUTE -> /api/V1/categories/remove/
+      
+      1:18:54 PM PUT ROUTE -> /api/V1/categories/update/
+      
+      1:19:03 PM DELETE ROUTE -> /api/V1/categories/delete/
+      
+      1:19:04 PM DELETE ROUTE -> /api/V1/categories/delete/
+      
+      1:19:04 PM DELETE ROUTE -> /api/V1/categories/delete/
+      
+      1:19:05 PM DELETE ROUTE -> /api/V1/categories/delete/
+      
+      1:19:05 PM DELETE ROUTE -> /api/V1/categories/delete/
+      
+      1:19:06 PM DELETE ROUTE -> /api/V1/categories/delete/
+      
+  ------------------------------------------------------------------------------------------------
+        12/6/2019, 1:27:54 PM
+
+      
+    SERVER STARTED - PORT 9000
+    
+      1:28:36 PM POST ROUTE -> /api/V1/categories/create/
+      
+      1:28:38 PM POST ROUTE -> /api/V1/categories/create/
+      
+      1:28:40 PM POST ROUTE -> /api/V1/categories/create/
+      
+      1:29:17 PM PATCH ROUTE -> /api/V1/categories/remove/
+      
+      1:29:32 PM PUT ROUTE -> /api/V1/categories/update/
+      
+      1:29:45 PM DELETE ROUTE -> /api/V1/categories/delete/
+      
+      1:29:50 PM DELETE ROUTE -> /api/V1/categories/delete/
+      
+      1:30:07 PM DELETE ROUTE -> /api/V1/product/delete/
+      
+      1:30:14 PM POST ROUTE -> /api/V1/product/create/
+      
+      1:30:20 PM POST ROUTE -> /api/V1/product/create/
+      
+      1:30:37 PM PATCH ROUTE -> /api/V1/product/remove/
+      
+      1:31:15 PM PUT ROUTE -> /api/V1/product/update/
+      
+      1:31:22 PM PUT ROUTE -> /api/V1/product/update/
+      
+      1:31:27 PM PUT ROUTE -> /api/V1/product/update/
+      
+      1:31:40 PM PUT ROUTE -> /api/V1/product/update/
+      
+      1:32:28 PM DELETE ROUTE -> /api/V1/categories/delete/
+      
+      1:32:29 PM DELETE ROUTE -> /api/V1/categories/delete/
+      
+      1:32:38 PM DELETE ROUTE -> /api/V1/categories/delete/
+      
+      1:32:39 PM DELETE ROUTE -> /api/V1/categories/delete/
+      
+      1:32:39 PM DELETE ROUTE -> /api/V1/categories/delete/
+      
+      1:32:44 PM PUT ROUTE -> /api/V1/product/update/
+      
+  ------------------------------------------------------------------------------------------------
+        12/6/2019, 1:47:48 PM
+
+      
+    SERVER STARTED - PORT 9000
+    
+      1:48:37 PM POST ROUTE -> /api/V1/categories/create/
+      
+      1:48:45 PM POST ROUTE -> /api/V1/categories/create/
+      
+      1:48:57 PM DELETE ROUTE -> /api/V1/categories/delete/
+      
+      1:48:58 PM DELETE ROUTE -> /api/V1/categories/delete/
+      
+      1:48:59 PM DELETE ROUTE -> /api/V1/categories/delete/
+      
+      1:49:00 PM DELETE ROUTE -> /api/V1/categories/delete/
+      
+      1:49:27 PM POST ROUTE -> /api/V1/categories/create/
+      
+      1:49:29 PM POST ROUTE -> /api/V1/categories/create/
+      
+      1:49:50 PM PATCH ROUTE -> /api/V1/categories/remove/
+      
+      1:50:16 PM PATCH ROUTE -> /api/V1/categories/remove/
+      
+      1:53:34 PM PATCH ROUTE -> /api/V1/categories/remove/
+      
+      1:53:42 PM PATCH ROUTE -> /api/V1/categories/remove/
+      
+      1:53:47 PM PATCH ROUTE -> /api/V1/categories/remove/
+      
+      1:53:50 PM PATCH ROUTE -> /api/V1/categories/remove/
+      
+      1:54:24 PM PUT ROUTE -> /api/V1/product/update/
+      
+      1:55:02 PM PATCH ROUTE -> /api/V1/product/remove/
+      
+  ------------------------------------------------------------------------------------------------
+        12/6/2019, 2:05:15 PM
+
+      
+    SERVER STARTED - PORT 9000
+    
+      2:06:30 PM PATCH ROUTE -> /api/V1/product/remove/
+      
+      2:06:36 PM PATCH ROUTE -> /api/V1/product/remove/
+      
+      2:06:41 PM PATCH ROUTE -> /api/V1/product/remove/
+      
+      2:07:01 PM POST ROUTE -> /api/V1/categories/create/
+      
+      2:07:03 PM POST ROUTE -> /api/V1/categories/create/
+      
+      2:07:04 PM POST ROUTE -> /api/V1/categories/create/
+      
+      2:07:17 PM PATCH ROUTE -> /api/V1/categories/remove/
+      
+      2:07:18 PM PATCH ROUTE -> /api/V1/categories/remove/
+      
+      2:07:19 PM PATCH ROUTE -> /api/V1/categories/remove/
+      
+      2:07:20 PM PATCH ROUTE -> /api/V1/categories/remove/
+      
+      2:07:21 PM PATCH ROUTE -> /api/V1/categories/remove/
+      
+      2:07:26 PM PATCH ROUTE -> /api/V1/categories/remove/
+      
+      2:07:42 PM PUT ROUTE -> /api/V1/categories/update/
+      
+      2:07:47 PM PUT ROUTE -> /api/V1/categories/update/
+      
+      2:07:53 PM PUT ROUTE -> /api/V1/categories/update/
+      
+      2:07:57 PM PUT ROUTE -> /api/V1/categories/update/
+      
+      2:08:12 PM DELETE ROUTE -> /api/V1/categories/delete/
+      
+      2:08:26 PM PATCH ROUTE -> /api/V1/categories/remove/
+      
+      2:08:40 PM DELETE ROUTE -> /api/V1/categories/delete/
+      
+      2:08:40 PM DELETE ROUTE -> /api/V1/categories/delete/
+      
+      2:08:41 PM DELETE ROUTE -> /api/V1/categories/delete/
+      
+      2:08:42 PM DELETE ROUTE -> /api/V1/categories/delete/
+      
+      2:08:43 PM DELETE ROUTE -> /api/V1/categories/delete/
+      
+      2:08:43 PM DELETE ROUTE -> /api/V1/categories/delete/
+      

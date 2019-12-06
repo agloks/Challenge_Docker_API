@@ -9,8 +9,8 @@ module.exports = new class ProductController {
     try {
       if(!Object.keys(body).length) throw new Error("Body vazio")
       
-      const {name, code} = body;
       const sucess = await db_category.create(body);
+      
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({result: sucess}));
     } catch(e) {
@@ -29,7 +29,11 @@ module.exports = new class ProductController {
       for(let k in body) {
         if(body[k] === "remove") objSend[k] = ""; 
       }
-      const sucess = await db_category.findOneAndUpdate({code: code}, objSend);
+      if(code !== body["code"]) throw new Error("Não é possível remover code")
+
+      const sucess = await db_category.findOneAndUpdate({code: code}, objSend)
+      .then((s) => db_category.findById(s._id));
+      
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({result: sucess}));
     } catch(e) {
@@ -44,7 +48,9 @@ module.exports = new class ProductController {
       if(!Object.keys(body).length) throw new Error("Body vazio")
 
       const {code} = body;
-      const sucess = await db_category.findOneAndUpdate({code: code}, body);
+      const sucess = await db_category.findOneAndUpdate({code: code}, body)
+      .then((s) => db_category.findById(s._id));;
+      
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({result: sucess}));
     } catch(e) {
@@ -60,6 +66,7 @@ module.exports = new class ProductController {
 
       const {code} = body;
       const sucess = await db_category.findOneAndDelete({code: code});
+      
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({result: sucess}));
     } catch(e) {
