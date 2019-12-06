@@ -24,7 +24,7 @@ cd node-dck
 npm install
 ```
 
-###2) Make a folder to persist date of container, and give permission for script
+### 2) Make a folder to persist date of container, and give permission for script
 
 ```
 mkdir ./data
